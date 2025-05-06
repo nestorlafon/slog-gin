@@ -1,14 +1,15 @@
 module example
 
 go 1.21
+
 toolchain go1.24.1
 
-replace github.com/samber/slog-gin => ../
+replace github.com/nestor-sk/slog-gin => ../
 
 require (
 	github.com/gin-gonic/gin v1.10.0
 	github.com/samber/slog-formatter v1.0.1
-	github.com/samber/slog-gin v1.13.3
+	github.com/nestor-sk/slog-gin v1.13.3
 	go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin v0.53.0
 	go.opentelemetry.io/otel v1.29.0
 	go.opentelemetry.io/otel/sdk v1.28.0
