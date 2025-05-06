@@ -128,11 +128,11 @@ func NewWithConfig(logger *slog.Logger, config Config) gin.HandlerFunc {
 
 		// dump request body
 		br := newBodyReader(c.Request.Body, RequestBodyMaxSize, config.WithRequestBody)
-		c.Request.Body = br
+		c.Request.Body = br.ReadCloser
 
 		// dump response body
 		bw := newBodyWriter(c.Writer, ResponseBodyMaxSize, config.WithResponseBody)
-		c.Writer = bw
+		c.Writer = bw.ResponseWriter
 
 		c.Next()
 
